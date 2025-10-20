@@ -1,5 +1,6 @@
 import {
   ALERT_EVENT_TYPE,
+  ALERT_TYPE,
   AlertTrigger,
   ALERT_TRIGGER_CONFIG_TYPE,
   AlertTriggerConfig,
@@ -11,6 +12,12 @@ export interface TriggerConfig {
   description: string;
   hasScope: boolean;
 }
+
+export const ALERT_TYPE_LABELS: Record<ALERT_TYPE, string> = {
+  [ALERT_TYPE.general]: "General",
+  [ALERT_TYPE.slack]: "Slack",
+  [ALERT_TYPE.pagerduty]: "PagerDuty",
+};
 
 export const TRIGGER_CONFIG: Record<ALERT_EVENT_TYPE, TriggerConfig> = {
   [ALERT_EVENT_TYPE.trace_errors]: {
